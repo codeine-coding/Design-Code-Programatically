@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  DesignCodeApp
 //
-//  Created by Meng To on 11/14/17.
+//  Created by Allen Whearry on 7/30/18.
 //  Copyright © 2018 Allen Whearry. All rights reserved.
 //
 
@@ -292,7 +292,7 @@ class HomeViewController: UIViewController {
         return label
     }()
     
-    // Chapter Section
+    // FIRST CHAPTER SECTION
     let chapterView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 800, width: 375, height: 380))
         view.translatesAutoresizingMaskIntoConstraints = false

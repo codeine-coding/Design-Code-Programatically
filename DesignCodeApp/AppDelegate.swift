@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  DesignCodeApp
 //
-//  Created by Meng To on 11/14/17.
+//  Created by Allen Whearry on 7/30/18.
 //  Copyright © 2018 Allen Whearry. All rights reserved.
 //
 
