@@ -185,7 +185,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = "Meng To";
+				ORGANIZATIONNAME = "Allen Whearry";
 				TargetAttributes = {
 					9698CD1A1FBB5DE000501C47 = {
 						CreatedOnToolsVersion = 9.1;
@@ -379,12 +379,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HZQ3ZGBLE6;
 				INFOPLIST_FILE = DesignCodeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.designcode.DesignCodeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codeinecoding.DesignCodeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -394,12 +396,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HZQ3ZGBLE6;
 				INFOPLIST_FILE = DesignCodeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.designcode.DesignCodeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codeinecoding.DesignCodeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

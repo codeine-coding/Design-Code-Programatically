@@ -3,7 +3,7 @@
 //  DesignCodeApp
 //
 //  Created by Allen Whearry on 7/31/18.
-//  Copyright © 2018 Meng To. All rights reserved.
+//  Copyright © 2018 Allen Whearry. All rights reserved.
 //
 
 import UIKit
