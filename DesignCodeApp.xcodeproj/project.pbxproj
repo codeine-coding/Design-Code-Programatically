@@ -27,6 +27,7 @@
 		9F98B33C211017E900FD9AD7 /* BookmarksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B33B211017E900FD9AD7 /* BookmarksTableViewController.swift */; };
 		9F98B33E2110181300FD9AD7 /* ExcercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B33D2110181300FD9AD7 /* ExcercisesTableViewController.swift */; };
 		9F98B3402110182E00FD9AD7 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B33F2110182E00FD9AD7 /* MoreViewController.swift */; };
+		9FCA90EA2131A0C300DC2704 /* More+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA90E92131A0C300DC2704 /* More+Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		9F98B33B211017E900FD9AD7 /* BookmarksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksTableViewController.swift; sourceTree = "<group>"; };
 		9F98B33D2110181300FD9AD7 /* ExcercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcercisesTableViewController.swift; sourceTree = "<group>"; };
 		9F98B33F2110182E00FD9AD7 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		9FCA90E92131A0C300DC2704 /* More+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "More+Constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				9F0BD123212F8D2800842838 /* Home+Constraints.swift */,
+				9FCA90E92131A0C300DC2704 /* More+Constraints.swift */,
 			);
 			path = ControllerExtensions;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				9F1F8686210ED9B200BDC274 /* SectionCell.swift in Sources */,
 				9F1294C5211A8BEA00527F93 /* PresentSectionViewController.swift in Sources */,
 				9F0BD124212F8D2800842838 /* Home+Constraints.swift in Sources */,
+				9FCA90EA2131A0C300DC2704 /* More+Constraints.swift in Sources */,
 				9F98B33A211017C800FD9AD7 /* ChaptersViewController.swift in Sources */,
 				9698CD271FBB5DE000501C47 /* DesignCodeApp.xcdatamodeld in Sources */,
 				9F98B33E2110181300FD9AD7 /* ExcercisesTableViewController.swift in Sources */,
