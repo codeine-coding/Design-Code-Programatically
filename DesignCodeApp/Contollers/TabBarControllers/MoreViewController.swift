@@ -84,7 +84,7 @@ class MoreViewController: UIViewController {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 5
+        stackView.spacing = 10
         stackView.distribution = .equalSpacing
         return stackView
     }()
@@ -125,7 +125,7 @@ class MoreViewController: UIViewController {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 5
+        stackView.spacing = 10
         stackView.distribution = .equalSpacing
         return stackView
     }()
@@ -165,7 +165,7 @@ class MoreViewController: UIViewController {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 5
+        stackView.spacing = 10
         stackView.distribution = .equalSpacing
         return stackView
     }()
@@ -269,6 +269,32 @@ class MoreViewController: UIViewController {
         return stack
     }()
     
+    // stack view for hR view
+    let topStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.spacing = 1
+        return stack
+    }()
+    let middleStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.spacing = 1
+        return stack
+    }()
+    let bottomStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.spacing = 1
+        return stack
+    }()
+    
     let epilogueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -325,95 +351,25 @@ class MoreViewController: UIViewController {
         ringStack.addArrangedSubview(progressStack3)
         sizingView.addSubview(ringStack)
         
-        actionStack.addArrangedSubview(loginBtn)
-        actionStack.addArrangedSubview(updatesBtn)
-        actionStack.addArrangedSubview(readBtn)
-        actionStack.addArrangedSubview(communityBtn)
-        actionStack.addArrangedSubview(emailBtn)
-        actionStack.addArrangedSubview(ambienceBtn)
+        topStack.addArrangedSubview(loginBtn)
+        topStack.addArrangedSubview(updatesBtn)
+        
+        middleStack.addArrangedSubview(readBtn)
+        middleStack.addArrangedSubview(communityBtn)
+        
+        bottomStack.addArrangedSubview(emailBtn)
+        bottomStack.addArrangedSubview(ambienceBtn)
+        
+        actionStack.addArrangedSubview(topStack)
+        actionStack.addArrangedSubview(middleStack)
+        actionStack.addArrangedSubview(bottomStack)
         
         sizingView.addSubview(actionStack)
         sizingView.addSubview(epilogueLabel)
         sizingView.addSubview(twitterBtn)
         
-        
-        
-        
-        NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-            
-            dialogView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
-            dialogView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20),
-            dialogView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
-            dialogView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
-            dialogView.widthAnchor.constraint(greaterThanOrEqualToConstant: 335),
-            
-            sizingView.topAnchor.constraint(equalTo: dialogView.topAnchor),
-            sizingView.leadingAnchor.constraint(equalTo: dialogView.leadingAnchor),
-            sizingView.trailingAnchor.constraint(equalTo: dialogView.trailingAnchor),
-            sizingView.bottomAnchor.constraint(equalTo: dialogView.bottomAnchor),
-            
-            myProgressLabel.topAnchor.constraint(equalTo: sizingView.topAnchor, constant: 20),
-            myProgressLabel.centerXAnchor.constraint(equalTo: sizingView.centerXAnchor),
-            
-            progressRing1.heightAnchor.constraint(equalToConstant: 70),
-            progressRing1.widthAnchor.constraint(equalToConstant: 70),
-            
-            iosdesignView.heightAnchor.constraint(equalToConstant: 70),
-            iosdesignView.widthAnchor.constraint(equalToConstant: 70),
-            
-            progressRing1.centerXAnchor.constraint(equalTo: iosdesignView.centerXAnchor),
-            progressRing1.centerYAnchor.constraint(equalTo: iosdesignView.centerYAnchor),
-            
-            progressLabel1.centerXAnchor.constraint(equalTo: iosdesignView.centerXAnchor),
-            progressLabel1.centerYAnchor.constraint(equalTo: iosdesignView.centerYAnchor),
-            
-            progressRing2.heightAnchor.constraint(equalToConstant: 70),
-            progressRing2.widthAnchor.constraint(equalToConstant: 70),
-            
-            sketchView.heightAnchor.constraint(equalToConstant: 70),
-            sketchLabel.widthAnchor.constraint(equalToConstant: 70),
-            
-            progressRing2.centerXAnchor.constraint(equalTo: sketchView.centerXAnchor),
-            progressRing2.centerYAnchor.constraint(equalTo: sketchView.centerYAnchor),
-            
-            progressLabel2.centerXAnchor.constraint(equalTo: sketchView.centerXAnchor),
-            progressLabel2.centerYAnchor.constraint(equalTo: sketchView.centerYAnchor),
-
-            progressRing3.heightAnchor.constraint(equalToConstant: 70),
-            progressRing3.widthAnchor.constraint(equalToConstant: 70),
-            
-            xcodeView.heightAnchor.constraint(equalToConstant: 70),
-            xcodeView.widthAnchor.constraint(equalToConstant: 70),
-            
-            progressRing3.centerXAnchor.constraint(equalTo: xcodeView.centerXAnchor),
-            progressRing3.centerYAnchor.constraint(equalTo: xcodeView.centerYAnchor),
-            
-            progressLabel3.centerXAnchor.constraint(equalTo: xcodeView.centerXAnchor),
-            progressLabel3.centerYAnchor.constraint(equalTo: xcodeView.centerYAnchor),
-            
-            ringStack.topAnchor.constraint(equalTo: myProgressLabel.bottomAnchor, constant: 8),
-            ringStack.leadingAnchor.constraint(equalTo: sizingView.leadingAnchor, constant: 20),
-            ringStack.trailingAnchor.constraint(equalTo: sizingView.trailingAnchor, constant: -20),
-            
-            
-            actionStack.topAnchor.constraint(equalTo: ringStack.bottomAnchor, constant: 20),
-            actionStack.leadingAnchor.constraint(equalTo: sizingView.leadingAnchor),
-            actionStack.trailingAnchor.constraint(equalTo: sizingView.trailingAnchor),
-            actionStack.heightAnchor.constraint(equalToConstant: 360),
-            
-            epilogueLabel.topAnchor.constraint(equalTo: actionStack.bottomAnchor, constant: 34),
-            epilogueLabel.centerXAnchor.constraint(equalTo: sizingView.centerXAnchor),
-            epilogueLabel.widthAnchor.constraint(equalToConstant: 170),
-            
-            twitterBtn.topAnchor.constraint(equalTo: epilogueLabel.bottomAnchor, constant: 15),
-            twitterBtn.centerXAnchor.constraint(equalTo: sizingView.centerXAnchor),
-            twitterBtn.bottomAnchor.constraint(equalTo: sizingView.bottomAnchor, constant: -15),
-            twitterBtn.widthAnchor.constraint(equalToConstant: 170),
-        ])
+        // called from More+Constraints.swift
+        displayConstraints()
     }
     
     
