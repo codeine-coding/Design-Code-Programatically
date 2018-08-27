@@ -395,7 +395,7 @@ class MoreViewController: UIViewController {
     }
     
     @objc private func loginBtnPressed() {
-        let destination = UINavigationController(rootViewController: PurchaseViewController())
+        let destination = PurchaseViewController()
         destination.modalPresentationStyle = .overFullScreen
         destination.modalTransitionStyle = .crossDissolve
         present(destination, animated: true, completion: nil)
