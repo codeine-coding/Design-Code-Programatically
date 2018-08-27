@@ -27,7 +27,7 @@ class PurchaseViewController: UIViewController {
     }()
     
     let blurView: UIVisualEffectView = {
-        let blur = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blur = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
         let view = UIVisualEffectView(effect: blur)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
