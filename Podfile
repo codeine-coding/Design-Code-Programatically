@@ -11,5 +11,6 @@ target 'DesignCodeApp' do
   pod 'Alamofire'
   pod 'Spring'
   pod 'ViewAnimator', '1.0.1'
+  pod 'TPKeyboardAvoiding'
   
 end
