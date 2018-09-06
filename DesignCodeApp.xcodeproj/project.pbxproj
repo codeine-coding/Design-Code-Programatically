@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D7E5B2F93BA227FBC44867F /* Pods_DesignCodeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D02E26E8F3683CF569079E9 /* Pods_DesignCodeApp.framework */; };
 		9698CD1F1FBB5DE000501C47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9698CD1E1FBB5DE000501C47 /* AppDelegate.swift */; };
 		9698CD211FBB5DE000501C47 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9698CD201FBB5DE000501C47 /* HomeViewController.swift */; };
 		9698CD271FBB5DE000501C47 /* DesignCodeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9698CD251FBB5DE000501C47 /* DesignCodeApp.xcdatamodeld */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18B0F51FD63E844AE95D82BC /* Pods-DesignCodeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignCodeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesignCodeApp/Pods-DesignCodeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		6D02E26E8F3683CF569079E9 /* Pods_DesignCodeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignCodeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9698CD1B1FBB5DE000501C47 /* DesignCodeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCodeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9698CD1E1FBB5DE000501C47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9698CD201FBB5DE000501C47 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		9F98B33D2110181300FD9AD7 /* ExcercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcercisesTableViewController.swift; sourceTree = "<group>"; };
 		9F98B33F2110182E00FD9AD7 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		9FCA90E92131A0C300DC2704 /* More+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "More+Constraints.swift"; sourceTree = "<group>"; };
+		F12ABFA1CC737BDC34C75935 /* Pods-DesignCodeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignCodeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DesignCodeApp/Pods-DesignCodeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7E5B2F93BA227FBC44867F /* Pods_DesignCodeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +77,8 @@
 			children = (
 				9698CD1D1FBB5DE000501C47 /* DesignCodeApp */,
 				9698CD1C1FBB5DE000501C47 /* Products */,
+				DF556FA0ECAC5A00640F3D40 /* Pods */,
+				A0F1202EB2AD48FA2A986954 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +167,23 @@
 			path = TabBarControllers;
 			sourceTree = "<group>";
 		};
+		A0F1202EB2AD48FA2A986954 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D02E26E8F3683CF569079E9 /* Pods_DesignCodeApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF556FA0ECAC5A00640F3D40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18B0F51FD63E844AE95D82BC /* Pods-DesignCodeApp.debug.xcconfig */,
+				F12ABFA1CC737BDC34C75935 /* Pods-DesignCodeApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9698CD301FBB5DE000501C47 /* Build configuration list for PBXNativeTarget "DesignCodeApp" */;
 			buildPhases = (
+				712A69FB63456E0D8FC0CE87 /* [CP] Check Pods Manifest.lock */,
 				9698CD171FBB5DE000501C47 /* Sources */,
 				9698CD181FBB5DE000501C47 /* Frameworks */,
 				9698CD191FBB5DE000501C47 /* Resources */,
+				93BFE8036F34EBF5039AC6A8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +252,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		712A69FB63456E0D8FC0CE87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesignCodeApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93BFE8036F34EBF5039AC6A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DesignCodeApp/Pods-DesignCodeApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DesignCodeApp/Pods-DesignCodeApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9698CD171FBB5DE000501C47 /* Sources */ = {
@@ -381,6 +450,7 @@
 		};
 		9698CD311FBB5DE000501C47 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18B0F51FD63E844AE95D82BC /* Pods-DesignCodeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -398,6 +468,7 @@
 		};
 		9698CD321FBB5DE000501C47 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F12ABFA1CC737BDC34C75935 /* Pods-DesignCodeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
