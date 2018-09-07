@@ -8,8 +8,6 @@ target 'DesignCodeApp' do
   use_frameworks!
 
   # Pods for DesignCodeApp
-  pod 'Alamofire'
-  pod 'Spring'
   pod 'ViewAnimator', '1.0.1'
   pod 'TPKeyboardAvoiding'
   
