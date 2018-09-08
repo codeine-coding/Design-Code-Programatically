@@ -165,6 +165,9 @@ class LoginViewController: UIViewController {
         innerView.addSubview(passRecoveryBtn)
         innerView.addSubview(loginBtn)
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        scrollView.addGestureRecognizer(tapGesture)
+        
         // Constraints
         NSLayoutConstraint.activate([
             backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -227,6 +230,8 @@ class LoginViewController: UIViewController {
         ])
     }
     
-    
+    @objc private func tapped() {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
