@@ -336,6 +336,10 @@ class HomeViewController: UIViewController {
         let view = UIView()
         view.backgroundColor = .clear
         view.frame.size = CGSize(width: 120, height: 28)
+        return view
+    }()
+    
+    let getBookButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.frame = CGRect(x: 0, y: 0, width: 120, height: 28)
         btn.setTitle("Get the book", for: .normal)
@@ -343,8 +347,7 @@ class HomeViewController: UIViewController {
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         btn.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         btn.layer.cornerRadius = 14
-        view.addSubview(btn)
-        return view
+        return btn
     }()
     
     // TESTIMONIAL CONTAINER VIEW
@@ -364,6 +367,8 @@ class HomeViewController: UIViewController {
     
     private func setupView() {
         navigationController?.navigationBar.barStyle = .black
+        navigationTitleView.addSubview(getBookButton)
+        getBookButton.addTarget(self, action: #selector(buyBtnPressed), for: .touchUpInside)
         navigationItem.titleView = navigationTitleView
         navigationController?.setNavigationBarHidden(true, animated: false)
         navigationItem.leftBarButtonItem = logoBarButton
@@ -449,6 +454,14 @@ class HomeViewController: UIViewController {
             player.play()
         })
 
+    }
+    
+    @objc private func buyBtnPressed() {
+        let destination = UINavigationController(rootViewController: PurchaseViewController())
+        destination.navigationBar.isHidden = true
+        destination.modalPresentationStyle = .overFullScreen
+        destination.modalTransitionStyle = .crossDissolve
+        present(destination, animated: true, completion: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
