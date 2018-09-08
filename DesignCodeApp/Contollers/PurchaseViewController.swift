@@ -285,6 +285,9 @@ class PurchaseViewController: UIViewController {
         scrollView.addSubview(titleLabel)
         scrollView.addSubview(contentTextView)
         
+        let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        scrollView.addGestureRecognizer(tapGuesture)
+        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
@@ -387,6 +390,10 @@ class PurchaseViewController: UIViewController {
         }
         updateViewConstraints()
         
+    }
+    
+    @objc private func tapped() {
+        dismiss(animated: true, completion: nil)
     }
 
 }

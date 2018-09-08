@@ -163,8 +163,8 @@
 			children = (
 				9698CD201FBB5DE000501C47 /* HomeViewController.swift */,
 				9F98B339211017C800FD9AD7 /* ChaptersViewController.swift */,
-				9F98B33B211017E900FD9AD7 /* BookmarksTableViewController.swift */,
 				9F98B33D2110181300FD9AD7 /* ExcercisesTableViewController.swift */,
+				9F98B33B211017E900FD9AD7 /* BookmarksTableViewController.swift */,
 				9F98B33F2110182E00FD9AD7 /* MoreViewController.swift */,
 			);
 			path = TabBarControllers;
