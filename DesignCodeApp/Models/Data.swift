@@ -132,3 +132,37 @@ let allBookmarks = [
         "content": "We will be designing the new Design+Code Home screen in this tutorial. It contains a hero image, headline, introduction, call-to-action button, chapter and people section."
     ]
 ]
+
+let benefits : Array<Dictionary<String,String>> = [
+    [
+        "subhead": "Watch and follow",
+        "title": "44 hours of video",
+        "body": "Each section is accompanied with captioned, well-paced videos that will help you follow step by step.",
+        "image": "Video"
+    ],[
+        "subhead": "Search and Bookmark",
+        "title": "100,000 words",
+        "body": "Most online courses either only have texts or videos. Design+Code has both, all searchable.",
+        "image": "Words"
+    ],[
+        "subhead": "Download",
+        "title": "10GB Source Files",
+        "body": "Over 36 Sketch files, 36 Xcode project files and templates to ensure that you start strong.",
+        "image": "Files"
+    ],[
+        "subhead": "Enjoy Anywhere",
+        "title": "iPhone, iPad & Web",
+        "body": "Experience the book from your iPhone, iPad and desktop. We got downloadable ePubs too.",
+        "image": "iOS"
+    ],[
+        "subhead": "Read, Browse",
+        "title": "Offline Experience",
+        "body": "Poor wifi? The app was designed for offline use so that you don't always rely on the internet.",
+        "image": "Offline"
+    ],[
+        "subhead": "Test your Knowledge",
+        "title": "Exercises",
+        "body": "The questions are hard. Try as many times as you want, get timed and stats to see how you improve.",
+        "image": "Exercises"
+    ],
+]
