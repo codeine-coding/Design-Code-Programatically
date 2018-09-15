@@ -13,6 +13,8 @@ class HomeViewController: UIViewController {
     
     let cellID = "CellID"
     
+    var benefitsContainerHeight: NSLayoutConstraint!
+    
     let presentSectionViewController = PresentSectionViewController()
     
     lazy var scrollView: UIScrollView = {
@@ -353,6 +355,9 @@ class HomeViewController: UIViewController {
     // TESTIMONIAL CONTAINER VIEW
     let testimonialVC = TestimonialViewController()
     
+    // BENEFITS CONTAINER VIEW
+    let benefitsVC = BenefitsViewController()
+    
     var isStatusBarHidden = false
    
     override func viewDidLoad() {
@@ -425,15 +430,19 @@ class HomeViewController: UIViewController {
         scrollView.addSubview(chapterView)
         
         testimonialVC.view.translatesAutoresizingMaskIntoConstraints = false
+        benefitsVC.view.translatesAutoresizingMaskIntoConstraints = false
         
-        // set testimonial vc
+        // set testimonial & benefits vc
         addChild(testimonialVC)
+        addChild(benefitsVC)
         
-        // add testimonial vc view to parrent
+        // add testimonial & benefits vc view to parrent
         scrollView.addSubview(testimonialVC.view)
+        scrollView.addSubview(benefitsVC.view)
         
-        // register testimonial vc
+        // register testimonial & benefits vc
         testimonialVC.didMove(toParent: self)
+        benefitsVC.didMove(toParent: self)
         
         // called from Home+Constraints.swift
         displayConstraints()

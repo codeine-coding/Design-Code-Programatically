@@ -21,6 +21,9 @@ extension HomeViewController {
         var compactConstraints: [NSLayoutConstraint] = []
         var regularConstraints: [NSLayoutConstraint] = []
         
+        benefitsContainerHeight = benefitsVC.view.heightAnchor.constraint(equalToConstant: 640)
+        benefitsContainerHeight.priority = UILayoutPriority(rawValue: 998)
+        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0.0),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0.0),
@@ -95,9 +98,13 @@ extension HomeViewController {
             testimonialVC.view.topAnchor.constraint(equalTo: chapterView.bottomAnchor),
             testimonialVC.view.leadingAnchor.constraint(equalTo: heroView.leadingAnchor),
             testimonialVC.view.trailingAnchor.constraint(equalTo: heroView.trailingAnchor),
-            testimonialVC.view.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             testimonialVC.view.heightAnchor.constraint(equalToConstant: 524),
             
+            benefitsVC.view.topAnchor.constraint(equalTo: testimonialVC.view.bottomAnchor),
+            benefitsVC.view.leadingAnchor.constraint(equalTo: heroView.leadingAnchor),
+            benefitsVC.view.trailingAnchor.constraint(equalTo: heroView.trailingAnchor),
+            benefitsVC.view.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            benefitsContainerHeight
         ])
         
         regularConstraints.append(contentsOf: [

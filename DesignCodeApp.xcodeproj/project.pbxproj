@@ -22,6 +22,7 @@
 		9F1F8688210EE43E00BDC274 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F8687210EE43E00BDC274 /* Data.swift */; };
 		9F38F0312117D37A00E88F8A /* BookmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38F0302117D37A00E88F8A /* BookmarkCell.swift */; };
 		9F8023FA214C9C0700747CA7 /* BenefitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8023F9214C9C0700747CA7 /* BenefitsViewController.swift */; };
+		9F8023FC214CCAAB00747CA7 /* BenefitsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8023FB214CCAAB00747CA7 /* BenefitsCell.swift */; };
 		9F98B331210FC6E900FD9AD7 /* TestimonialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B330210FC6E900FD9AD7 /* TestimonialViewController.swift */; };
 		9F98B336210FC78900FD9AD7 /* TestimonialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B335210FC78900FD9AD7 /* TestimonialCell.swift */; };
 		9F98B3382110169B00FD9AD7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B3372110169B00FD9AD7 /* MainTabBarController.swift */; };
@@ -52,6 +53,7 @@
 		9F1F8687210EE43E00BDC274 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		9F38F0302117D37A00E88F8A /* BookmarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCell.swift; sourceTree = "<group>"; };
 		9F8023F9214C9C0700747CA7 /* BenefitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitsViewController.swift; sourceTree = "<group>"; };
+		9F8023FB214CCAAB00747CA7 /* BenefitsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitsCell.swift; sourceTree = "<group>"; };
 		9F98B330210FC6E900FD9AD7 /* TestimonialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonialViewController.swift; sourceTree = "<group>"; };
 		9F98B335210FC78900FD9AD7 /* TestimonialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonialCell.swift; sourceTree = "<group>"; };
 		9F98B3372110169B00FD9AD7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				9F1F8685210ED9B200BDC274 /* SectionCell.swift */,
 				9F98B335210FC78900FD9AD7 /* TestimonialCell.swift */,
 				9F38F0302117D37A00E88F8A /* BookmarkCell.swift */,
+				9F8023FB214CCAAB00747CA7 /* BenefitsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				9F1F8684210ED32D00BDC274 /* SectionViewController.swift in Sources */,
 				9F98B33C211017E900FD9AD7 /* BookmarksTableViewController.swift in Sources */,
 				9F98B331210FC6E900FD9AD7 /* TestimonialViewController.swift in Sources */,
+				9F8023FC214CCAAB00747CA7 /* BenefitsCell.swift in Sources */,
 				9F1F8686210ED9B200BDC274 /* SectionCell.swift in Sources */,
 				9F1294C5211A8BEA00527F93 /* PresentSectionViewController.swift in Sources */,
 				9F0BD124212F8D2800842838 /* Home+Constraints.swift in Sources */,
