@@ -10,5 +10,6 @@ target 'DesignCodeApp' do
   # Pods for DesignCodeApp
   pod 'ViewAnimator', '1.0.1'
   pod 'TPKeyboardAvoiding'
+  pod 'MKRingProgressView'
   
 end

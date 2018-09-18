@@ -32,7 +32,7 @@ class MainTabBarController: UITabBarController {
         bookmarksVC.tabBarItem.selectedImage = UIImage(named: "Tab Bar/bookmarks-active")
         bookmarksVC.tabBarItem.image = UIImage(named: "Tab Bar/bookmarks")
         
-        let exercisesVC = ExcercisesTableViewController()
+        let exercisesVC = ExercisesTableViewController()
         exercisesVC.title = "Exercises"
         exercisesVC.tabBarItem.selectedImage = UIImage(named: "Tab Bar/exercises-active")
         exercisesVC.tabBarItem.image = UIImage(named: "Tab Bar/exercises")

@@ -166,3 +166,43 @@ let benefits : Array<Dictionary<String,String>> = [
         "image": "Exercises"
     ],
 ]
+
+let exercises = [
+    "chapter-1-iOS-11-Design": [
+        [
+            "question": "What are the 3 core philosophies for iOS design?",
+            "correctAnswer": "Deference, clarity and depth",
+            "answers": [
+                "Intuition, clarity and beauty",
+                "Deference, clarity and depth",
+                "Fun, clarity and perception",
+                "Good, great and insanely great",
+                "Clarity, depth and intuition",
+            ]
+        ],
+        [
+            "question": "What is the recommended line-height for readability?",
+            "correctAnswer": "120% to 145%",
+            "answers": [
+                "100% to 110%",
+                "110% to 120%",
+                "110% to 150%",
+                "120% to 145%",
+                "100% to 160%",
+            ],
+            ],
+    ],
+    "chapter-1-Sketch": [
+        [
+            "question": "What's the big feature in Sketch 47?",
+            "correctAnswer": "Libraries",
+            "answers": [
+                "New Emojis",
+                "Nested Symbols",
+                "Symbol Overrides",
+                "Resizing Constraints",
+                "Libraries",
+            ]
+        ],
+    ],
+]
