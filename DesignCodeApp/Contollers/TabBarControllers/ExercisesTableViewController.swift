@@ -11,6 +11,14 @@ import UIKit
 class ExercisesTableViewController: UITableViewController {
     
     let cellID = "Exercise Cell"
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let destination = ExerciseDialogViewController()
+        destination.modalTransitionStyle = .coverVertical
+        destination.modalPresentationStyle = .overFullScreen
+        present(destination, animated: true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
