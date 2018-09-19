@@ -54,6 +54,8 @@ extension MoreViewController {
             
             progressRing1.centerXAnchor.constraint(equalTo: iosdesignView.centerXAnchor),
             progressRing1.centerYAnchor.constraint(equalTo: iosdesignView.centerYAnchor),
+            progressRing1.heightAnchor.constraint(equalToConstant: 70),
+            progressRing1.widthAnchor.constraint(equalToConstant: 70),
             
             progressLabel1.centerXAnchor.constraint(equalTo: iosdesignView.centerXAnchor),
             progressLabel1.centerYAnchor.constraint(equalTo: iosdesignView.centerYAnchor),
@@ -62,6 +64,8 @@ extension MoreViewController {
             
             progressRing2.centerXAnchor.constraint(equalTo: sketchView.centerXAnchor),
             progressRing2.centerYAnchor.constraint(equalTo: sketchView.centerYAnchor),
+            progressRing2.heightAnchor.constraint(equalToConstant: 70),
+            progressRing2.widthAnchor.constraint(equalToConstant: 70),
             
             progressLabel2.centerXAnchor.constraint(equalTo: sketchView.centerXAnchor),
             progressLabel2.centerYAnchor.constraint(equalTo: sketchView.centerYAnchor),
@@ -70,6 +74,8 @@ extension MoreViewController {
             
             progressRing3.centerXAnchor.constraint(equalTo: xcodeView.centerXAnchor),
             progressRing3.centerYAnchor.constraint(equalTo: xcodeView.centerYAnchor),
+            progressRing3.heightAnchor.constraint(equalToConstant: 70),
+            progressRing3.widthAnchor.constraint(equalToConstant: 70),
             
             progressLabel3.centerXAnchor.constraint(equalTo: xcodeView.centerXAnchor),
             progressLabel3.centerYAnchor.constraint(equalTo: xcodeView.centerYAnchor),

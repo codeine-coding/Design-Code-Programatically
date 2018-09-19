@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MKRingProgressView
 
 class MoreViewController: UIViewController {
     
@@ -51,14 +52,19 @@ class MoreViewController: UIViewController {
     let iosdesignView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
         return view
     }()
     
-    let progressRing1: UIImageView = {
-        let iv = UIImageView()
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = UIImage(named: "Placeholder/image-ring-1")
-        return iv
+    let progressRing1: MKRingProgressView = {
+        let view = MKRingProgressView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        view.ringWidth = 7
+        view.startColor = #colorLiteral(red: 0.8470588235, green: 0.168627451, blue: 0.8588235294, alpha: 1)
+        view.endColor = #colorLiteral(red: 0.4666666667, green: 0.1098039216, blue: 0.7803921569, alpha: 1)
+        view.backgroundRingColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+        return view
     }()
     
     let progressLabel1: UILabel = {
@@ -95,11 +101,15 @@ class MoreViewController: UIViewController {
         return view
     }()
     
-    let progressRing2: UIImageView = {
-        let iv = UIImageView()
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = UIImage(named: "Placeholder/image-ring-2")
-        return iv
+    let progressRing2:  MKRingProgressView = {
+        let view = MKRingProgressView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        view.ringWidth = 7
+        view.startColor = #colorLiteral(red: 0.9294117647, green: 0.4784313725, blue: 0.1882352941, alpha: 1)
+        view.endColor = #colorLiteral(red: 1, green: 0.6901960784, blue: 0.0862745098, alpha: 1)
+        view.backgroundRingColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+        return view
     }()
     
     let progressLabel2: UILabel = {
@@ -136,11 +146,15 @@ class MoreViewController: UIViewController {
         return view
     }()
     
-    let progressRing3: UIImageView = {
-        let iv = UIImageView()
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = UIImage(named: "Placeholder/image-ring-3")
-        return iv
+    let progressRing3:  MKRingProgressView = {
+        let view = MKRingProgressView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        view.ringWidth = 7
+        view.startColor = #colorLiteral(red: 0.2431372549, green: 0.5137254902, blue: 0.9450980392, alpha: 1)
+        view.endColor = #colorLiteral(red: 0.4078431373, green: 0.7725490196, blue: 1, alpha: 1)
+        view.backgroundRingColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+        return view
     }()
     let progressLabel3: UILabel = {
         let label = UILabel()
@@ -317,6 +331,18 @@ class MoreViewController: UIViewController {
         return btn
     }()
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let progresses = [72,56,22]
+        
+        progressLabel1.animateTo(progresses[0])
+        progressLabel2.animateTo(progresses[1])
+        progressLabel3.animateTo(progresses[2])
+        
+        progressRing1.animateTo(progresses[0])
+        progressRing2.animateTo(progresses[1])
+        progressRing3.animateTo(progresses[2])
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
