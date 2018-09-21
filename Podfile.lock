@@ -1,24 +1,34 @@
 PODS:
   - MKRingProgressView (1.2)
+  - Realm (3.5.0):
+    - Realm/Headers (= 3.5.0)
+  - Realm/Headers (3.5.0)
+  - RealmSwift (3.5.0):
+    - Realm (= 3.5.0)
   - TPKeyboardAvoiding (1.3.2)
   - ViewAnimator (1.0.1)
 
 DEPENDENCIES:
   - MKRingProgressView
+  - RealmSwift
   - TPKeyboardAvoiding
   - ViewAnimator (= 1.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - MKRingProgressView
+    - Realm
+    - RealmSwift
     - TPKeyboardAvoiding
     - ViewAnimator
 
 SPEC CHECKSUMS:
   MKRingProgressView: 023e2241d1ef23b05cb9893aa4878395861e3902
+  Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
+  RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
   ViewAnimator: a094d13bc86e868e908d33e524fcb58a4ddcf98e
 
-PODFILE CHECKSUM: b0fe21de71b1b8bb1ea9f2f7760d0aee7b28a3f6
+PODFILE CHECKSUM: e910187e60185556b2867450a00cd03d7c0fe83c
 
 COCOAPODS: 1.5.2
