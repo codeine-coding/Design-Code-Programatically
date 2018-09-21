@@ -23,7 +23,7 @@
 		9F38F0312117D37A00E88F8A /* BookmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38F0302117D37A00E88F8A /* BookmarkCell.swift */; };
 		9F8023FA214C9C0700747CA7 /* BenefitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8023F9214C9C0700747CA7 /* BenefitsViewController.swift */; };
 		9F8023FC214CCAAB00747CA7 /* BenefitsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8023FB214CCAAB00747CA7 /* BenefitsCell.swift */; };
-		9F8E17E9214F10F20056B834 /* ExcerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E17E8214F10F20056B834 /* ExcerciseCell.swift */; };
+		9F8E17E9214F10F20056B834 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E17E8214F10F20056B834 /* ExerciseCell.swift */; };
 		9F8E17EB214F19770056B834 /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E17EA214F19770056B834 /* ScoreCell.swift */; };
 		9F8E17ED214F1E390056B834 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E17EC214F1E390056B834 /* QuestionCell.swift */; };
 		9F8E17EF2151C0DB0056B834 /* ExerciseDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E17EE2151C0DB0056B834 /* ExerciseDialogViewController.swift */; };
@@ -60,7 +60,7 @@
 		9F38F0302117D37A00E88F8A /* BookmarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCell.swift; sourceTree = "<group>"; };
 		9F8023F9214C9C0700747CA7 /* BenefitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitsViewController.swift; sourceTree = "<group>"; };
 		9F8023FB214CCAAB00747CA7 /* BenefitsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitsCell.swift; sourceTree = "<group>"; };
-		9F8E17E8214F10F20056B834 /* ExcerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseCell.swift; sourceTree = "<group>"; };
+		9F8E17E8214F10F20056B834 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		9F8E17EA214F19770056B834 /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
 		9F8E17EC214F1E390056B834 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		9F8E17EE2151C0DB0056B834 /* ExerciseDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDialogViewController.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 				9F1F8685210ED9B200BDC274 /* SectionCell.swift */,
 				9F98B335210FC78900FD9AD7 /* TestimonialCell.swift */,
 				9F8023FB214CCAAB00747CA7 /* BenefitsCell.swift */,
-				9F8E17E8214F10F20056B834 /* ExcerciseCell.swift */,
+				9F8E17E8214F10F20056B834 /* ExerciseCell.swift */,
 				9F38F0302117D37A00E88F8A /* BookmarkCell.swift */,
 				9F8E17EA214F19770056B834 /* ScoreCell.swift */,
 				9F8E17EC214F1E390056B834 /* QuestionCell.swift */,
@@ -346,7 +346,7 @@
 				9F1F8688210EE43E00BDC274 /* Data.swift in Sources */,
 				9F8E17F22151C8720056B834 /* UILabel+Animate.swift in Sources */,
 				9698CD1F1FBB5DE000501C47 /* AppDelegate.swift in Sources */,
-				9F8E17E9214F10F20056B834 /* ExcerciseCell.swift in Sources */,
+				9F8E17E9214F10F20056B834 /* ExerciseCell.swift in Sources */,
 				9FC6C33D2142180900E43026 /* LoginViewController.swift in Sources */,
 				9F8023FA214C9C0700747CA7 /* BenefitsViewController.swift in Sources */,
 				9F1F8684210ED32D00BDC274 /* SectionViewController.swift in Sources */,

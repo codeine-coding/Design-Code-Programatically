@@ -9,15 +9,21 @@
 import UIKit
 import MKRingProgressView
 
+protocol ScoreCellDelegate : class {
+    func scoreCell(_ cell : ScoreCell, didTapShareExercise exercise : Array<Dictionary<String,Any>>)
+    func scoreCell(_ cell : ScoreCell, didTapTryAgainExercise exercise : Array<Dictionary<String,Any>>)
+}
+
 class ScoreCell: UICollectionViewCell {
-    
+    weak var delegate : ScoreCellDelegate?
+    var exercise : Array<Dictionary<String,Any>>!
     
     let cardView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 14
         view.layer.shadowRadius = 10
-        view.layer.opacity = 0.15
+        view.layer.shadowOpacity = 0.15
         return view
     }()
     
@@ -105,13 +111,13 @@ class ScoreCell: UICollectionViewCell {
     let tryVEV: UIVisualEffectView = {
         let blur = UIBlurEffect(style: .dark)
         let view = UIVisualEffectView(effect: blur)
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
         return view
     }()
     
     let tryButton: UIButton = {
         let btn = UIButton(type: .system)
+        btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Try Again", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
@@ -123,12 +129,12 @@ class ScoreCell: UICollectionViewCell {
     let shareVEV: UIVisualEffectView = {
         let blur = UIBlurEffect(style: .dark)
         let view = UIVisualEffectView(effect: blur)
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
         return view
     }()
     let shareBtn: UIButton = {
         let btn = UIButton(type: .system)
+        btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Share", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
@@ -138,9 +144,12 @@ class ScoreCell: UICollectionViewCell {
         return btn
     }()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        percentageLabel.animateTo(72)
+        ringProgress.animateTo(72)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -150,6 +159,7 @@ class ScoreCell: UICollectionViewCell {
     private func setupView() {
         addSubview(cardView)
         cardView.addSubview(innerView)
+        
         innerView.addSubview(imageView)
         innerView.addSubview(titleLabel)
         innerView.addSubview(subheaderLabel)
@@ -157,14 +167,17 @@ class ScoreCell: UICollectionViewCell {
         innerView.addSubview(stackView)
         innerView.addSubview(summaryLabel)
         
-        progressRingView.addSubview(ringProgress)
-        progressRingView.addSubview(percentageLabel)
+        progressRingView.contentView.addSubview(ringProgress)
+        progressRingView.contentView.addSubview(percentageLabel)
+        
+        tryVEV.contentView.addSubview(tryButton)
+        shareVEV.contentView.addSubview(shareBtn)
         
         stackView.addArrangedSubview(tryVEV)
-        tryVEV.contentView.addSubview(tryButton)
+        stackView.addArrangedSubview(shareVEV)
         
-        stackView.addSubview(shareVEV)
-        shareVEV.contentView.addSubview(shareVEV)
+        tryButton.addTarget(self, action: #selector(againButtonTapped(_:)), for: .touchUpInside)
+        shareBtn.addTarget(self, action: #selector(shareButtonTapped(_:)), for: .touchUpInside)
         
         
         NSLayoutConstraint.activate([
@@ -204,6 +217,16 @@ class ScoreCell: UICollectionViewCell {
             percentageLabel.centerXAnchor.constraint(equalTo: progressRingView.centerXAnchor),
             percentageLabel.centerYAnchor.constraint(equalTo: progressRingView.centerYAnchor),
             
+            tryButton.topAnchor.constraint(equalTo: tryVEV.topAnchor),
+            tryButton.bottomAnchor.constraint(equalTo: tryVEV.bottomAnchor),
+            tryButton.leadingAnchor.constraint(equalTo: tryVEV.leadingAnchor),
+            tryButton.trailingAnchor.constraint(equalTo: tryVEV.trailingAnchor),
+            
+            shareBtn.topAnchor.constraint(equalTo: shareVEV.topAnchor),
+            shareBtn.bottomAnchor.constraint(equalTo: shareVEV.bottomAnchor),
+            shareBtn.leadingAnchor.constraint(equalTo: shareVEV.leadingAnchor),
+            shareBtn.trailingAnchor.constraint(equalTo: shareVEV.trailingAnchor),
+            
             stackView.bottomAnchor.constraint(equalTo: summaryLabel.topAnchor, constant: -15),
             stackView.widthAnchor.constraint(equalToConstant: 240),
             stackView.heightAnchor.constraint(equalToConstant: 40),
@@ -214,6 +237,14 @@ class ScoreCell: UICollectionViewCell {
             summaryLabel.trailingAnchor.constraint(equalTo: innerView.trailingAnchor, constant: -20),
             
             ])
+    }
+    
+    @objc func shareButtonTapped(_ sender: UIButton) {
+        delegate?.scoreCell(self, didTapShareExercise: exercise)
+    }
+    
+    @objc func againButtonTapped(_ sender: UIButton) {
+        delegate?.scoreCell(self, didTapTryAgainExercise: exercise)
     }
     
 }

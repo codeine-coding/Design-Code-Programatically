@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol QuestionCellDelegate: class {
+    func questionCell(_ cell: QuestionCell, didTapAnswerButton button: UIButton, forQuestion question: Dictionary<String,Any>)
+}
+
 class QuestionCell: UICollectionViewCell {
+    
+    weak var delegate: QuestionCellDelegate?
+    var question: Dictionary<String,Any>!
     
     let cardView: UIView = {
         let view = UIView()
@@ -71,7 +78,8 @@ class QuestionCell: UICollectionViewCell {
         btn.setTitleColor(#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         btn.setImage(UIImage(named: "Exercises-Uncheck"), for: .normal)
-//        btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        btn.contentHorizontalAlignment = .left
+        btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
         return btn
     }()
     
@@ -81,7 +89,8 @@ class QuestionCell: UICollectionViewCell {
         btn.setTitleColor(#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         btn.setImage(UIImage(named: "Exercises-Uncheck"), for: .normal)
-//        btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        btn.contentHorizontalAlignment = .left
+        btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
         return btn
     }()
     
@@ -91,7 +100,8 @@ class QuestionCell: UICollectionViewCell {
         btn.setTitleColor(#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         btn.setImage(UIImage(named: "Exercises-Uncheck"), for: .normal)
-//        btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        btn.contentHorizontalAlignment = .left
+        btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
         return btn
     }()
     
@@ -101,7 +111,8 @@ class QuestionCell: UICollectionViewCell {
         btn.setTitleColor(#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         btn.setImage(UIImage(named: "Exercises-Uncheck"), for: .normal)
-//        btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
+        btn.contentHorizontalAlignment = .left
+        btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
         return btn
     }()
     
@@ -111,7 +122,8 @@ class QuestionCell: UICollectionViewCell {
         btn.setTitleColor(#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         btn.setImage(UIImage(named: "Exercises-Uncheck"), for: .normal)
-//        btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
+        btn.contentHorizontalAlignment = .left
+        btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
         return btn
     }()
     
@@ -122,6 +134,8 @@ class QuestionCell: UICollectionViewCell {
         sv.axis = .vertical
         return sv
     }()
+    
+    var answerButtons: [UIButton] { return [answerbtn1, answerbtn2, answerbtn3, answerbtn4, answerbtn5]}
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -148,6 +162,12 @@ class QuestionCell: UICollectionViewCell {
         stackView.addArrangedSubview(answerbtn3)
         stackView.addArrangedSubview(answerbtn4)
         stackView.addArrangedSubview(answerbtn5)
+        
+        answerbtn1.addTarget(self, action: #selector(didTapAnswerButton(_:)), for: .touchUpInside)
+        answerbtn2.addTarget(self, action: #selector(didTapAnswerButton(_:)), for: .touchUpInside)
+        answerbtn3.addTarget(self, action: #selector(didTapAnswerButton(_:)), for: .touchUpInside)
+        answerbtn4.addTarget(self, action: #selector(didTapAnswerButton(_:)), for: .touchUpInside)
+        answerbtn5.addTarget(self, action: #selector(didTapAnswerButton(_:)), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             cardView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
@@ -184,5 +204,11 @@ class QuestionCell: UICollectionViewCell {
             stackView.heightAnchor.constraint(equalToConstant: 300),
             
             ])
+    }
+    
+    @objc func didTapAnswerButton(_ sender: UIButton) {
+        delegate?.questionCell(self, didTapAnswerButton: sender, forQuestion: question)
+        
+        sender.setImage(UIImage(named: "Exercises-Check"), for: .normal)
     }
 }
