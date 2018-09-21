@@ -165,15 +165,14 @@
 		9F98B332210FC6FD00FD9AD7 /* Contollers */ = {
 			isa = PBXGroup;
 			children = (
+				9FB861732154D39100D69806 /* EmbedViewControllers */,
 				9F98B3412110185100FD9AD7 /* TabBarControllers */,
 				9F0BD122212F8D0000842838 /* ControllerExtensions */,
 				9F98B3372110169B00FD9AD7 /* MainTabBarController.swift */,
 				9F1F8683210ED32C00BDC274 /* SectionViewController.swift */,
 				9F1294C6211FEACD00527F93 /* WebViewController.swift */,
 				9F055F79212A3F4000FCAE5A /* PurchaseViewController.swift */,
-				9F98B330210FC6E900FD9AD7 /* TestimonialViewController.swift */,
 				9FC6C33C2142180900E43026 /* LoginViewController.swift */,
-				9F8023F9214C9C0700747CA7 /* BenefitsViewController.swift */,
 				9F8E17EE2151C0DB0056B834 /* ExerciseDialogViewController.swift */,
 			);
 			path = Contollers;
@@ -223,6 +222,15 @@
 				9FB8616A2154BAA400D69806 /* ContentApi.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		9FB861732154D39100D69806 /* EmbedViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F98B330210FC6E900FD9AD7 /* TestimonialViewController.swift */,
+				9F8023F9214C9C0700747CA7 /* BenefitsViewController.swift */,
+			);
+			path = EmbedViewControllers;
 			sourceTree = "<group>";
 		};
 		A0F1202EB2AD48FA2A986954 /* Frameworks */ = {
