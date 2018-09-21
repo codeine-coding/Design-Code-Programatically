@@ -17,14 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let request: NSFetchRequest<UserMO> = UserMO.fetchRequest()
-        
-        if let users = try? persistentContainer.viewContext.fetch(request) {
-            if users.isEmpty {
-                createDefaultUser()
-            }
-        }
-        
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = MainTabBarController()
@@ -85,17 +77,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error description: \(error.localizedDescription)")
             }
         }
-    }
-    
-    // MARK: - Create default user
-    
-    func createDefaultUser() {
-        let user = NSEntityDescription.insertNewObject(
-            forEntityName: "User",
-            into: persistentContainer.viewContext) as! UserMO
-        user.name = "User"
-        user.email = "user@designcode.io"
-        saveContext()
     }
 
 }

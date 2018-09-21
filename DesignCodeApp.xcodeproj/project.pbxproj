@@ -36,10 +36,6 @@
 		9F98B33C211017E900FD9AD7 /* BookmarksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B33B211017E900FD9AD7 /* BookmarksTableViewController.swift */; };
 		9F98B33E2110181300FD9AD7 /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B33D2110181300FD9AD7 /* ExercisesTableViewController.swift */; };
 		9F98B3402110182E00FD9AD7 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B33F2110182E00FD9AD7 /* MoreViewController.swift */; };
-		9FB8615D215491F700D69806 /* BookmarkMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB86159215491F700D69806 /* BookmarkMO+CoreDataClass.swift */; };
-		9FB8615E215491F700D69806 /* UserMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8615A215491F700D69806 /* UserMO+CoreDataClass.swift */; };
-		9FB86166215493D400D69806 /* UserMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB86164215493D400D69806 /* UserMO+CoreDataProperties.swift */; };
-		9FB86167215493D400D69806 /* BookmarkMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB86165215493D400D69806 /* BookmarkMO+CoreDataProperties.swift */; };
 		9FC6C33D2142180900E43026 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC6C33C2142180900E43026 /* LoginViewController.swift */; };
 		9FCA90EA2131A0C300DC2704 /* More+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA90E92131A0C300DC2704 /* More+Constraints.swift */; };
 /* End PBXBuildFile section */
@@ -77,10 +73,6 @@
 		9F98B33B211017E900FD9AD7 /* BookmarksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksTableViewController.swift; sourceTree = "<group>"; };
 		9F98B33D2110181300FD9AD7 /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
 		9F98B33F2110182E00FD9AD7 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
-		9FB86159215491F700D69806 /* BookmarkMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BookmarkMO+CoreDataClass.swift"; path = "/Users/allen/Desktop/Beginning IOS/DesignCodeApp/DesignCodeApp/Models/BookmarkMO+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		9FB8615A215491F700D69806 /* UserMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserMO+CoreDataClass.swift"; path = "/Users/allen/Desktop/Beginning IOS/DesignCodeApp/DesignCodeApp/Models/UserMO+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		9FB86164215493D400D69806 /* UserMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9FB86165215493D400D69806 /* BookmarkMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookmarkMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9FC6C33C2142180900E43026 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9FCA90E92131A0C300DC2704 /* More+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "More+Constraints.swift"; sourceTree = "<group>"; };
 		F12ABFA1CC737BDC34C75935 /* Pods-DesignCodeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignCodeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DesignCodeApp/Pods-DesignCodeApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,10 +171,6 @@
 		9F98B333210FC71E00FD9AD7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9FB86165215493D400D69806 /* BookmarkMO+CoreDataProperties.swift */,
-				9FB86159215491F700D69806 /* BookmarkMO+CoreDataClass.swift */,
-				9FB86164215493D400D69806 /* UserMO+CoreDataProperties.swift */,
-				9FB8615A215491F700D69806 /* UserMO+CoreDataClass.swift */,
 				9F1F8687210EE43E00BDC274 /* Data.swift */,
 			);
 			path = Models;
@@ -349,9 +337,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9698CD211FBB5DE000501C47 /* HomeViewController.swift in Sources */,
-				9FB8615E215491F700D69806 /* UserMO+CoreDataClass.swift in Sources */,
-				9FB8615D215491F700D69806 /* BookmarkMO+CoreDataClass.swift in Sources */,
-				9FB86167215493D400D69806 /* BookmarkMO+CoreDataProperties.swift in Sources */,
 				9F38F0312117D37A00E88F8A /* BookmarkCell.swift in Sources */,
 				9F98B3402110182E00FD9AD7 /* MoreViewController.swift in Sources */,
 				9F055F7A212A3F4000FCAE5A /* PurchaseViewController.swift in Sources */,
@@ -369,7 +354,6 @@
 				9F98B331210FC6E900FD9AD7 /* TestimonialViewController.swift in Sources */,
 				9F8023FC214CCAAB00747CA7 /* BenefitsCell.swift in Sources */,
 				9F1F8686210ED9B200BDC274 /* SectionCell.swift in Sources */,
-				9FB86166215493D400D69806 /* UserMO+CoreDataProperties.swift in Sources */,
 				9F1294C5211A8BEA00527F93 /* PresentSectionViewController.swift in Sources */,
 				9F0BD124212F8D2800842838 /* Home+Constraints.swift in Sources */,
 				9FCA90EA2131A0C300DC2704 /* More+Constraints.swift in Sources */,
