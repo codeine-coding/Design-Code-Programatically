@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     
     let presentSectionViewController = PresentSectionViewController()
     
+    var sections: [Section] = ContentApi.shared.sections
+    
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView(frame: UIScreen.main.bounds)
         view.backgroundColor = .white
@@ -554,9 +556,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! SectionCell
         let section = sections[indexPath.row]
-        cell.cardTitle.text = section["title"]
-        cell.cardDescription.text = section["caption"]
-        cell.cardBackgroundImageView.image = UIImage(named: section["image"]!)
+        cell.cardTitle.text = section.title
+        cell.cardDescription.text = section.caption
+        cell.cardBackgroundImageView.image = UIImage(named: section.imageName)
         cell.layer.transform = animateCell(cellFrame: cell.frame)
         return cell
     }

@@ -11,6 +11,7 @@ import UIKit
 class BenefitsViewController: UIViewController {
     
     let cellID = "cellID"
+    var benefits: [Benefit]!
     
     var collectionViewHeight: NSLayoutConstraint!
     
@@ -169,10 +170,10 @@ extension BenefitsViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! BenefitsCell
         let benefit = benefits[indexPath.row]
-        cell.subhead.text = benefit["subhead"]?.uppercased()
-        cell.title.text = benefit["title"]
-        cell.body.text = benefit["body"]
-        cell.image.image = UIImage(named: "Benefit-" + benefit["image"]!)
+        cell.subhead.text = benefit.subheader.uppercased()
+        cell.title.text = benefit.title
+        cell.body.text = benefit.body
+        cell.image.image = UIImage(named: "Benefit-" + benefit.imageName)
         
         return cell
     }
@@ -193,14 +194,14 @@ extension BenefitsViewController: UICollectionViewDelegate, UICollectionViewData
         
         let titleLabel = UILabel()
         titleLabel.frame.size = CGSize(width: width - 120, height: CGFloat.greatestFiniteMagnitude)
-        titleLabel.text = benefit["title"]
+        titleLabel.text = benefit.title
         titleLabel.numberOfLines = 1
         titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         titleLabel.sizeToFit()
         
         let textLabel = UILabel()
         textLabel.frame.size = CGSize(width: width - 120, height: CGFloat.greatestFiniteMagnitude)
-        textLabel.text = benefit["body"]
+        textLabel.text = benefit.body
         textLabel.numberOfLines = 5
         textLabel.font = UIFont.preferredFont(forTextStyle: .body)
         textLabel.minimumScaleFactor = 0.5

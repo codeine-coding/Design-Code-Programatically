@@ -11,6 +11,7 @@ import UIKit
 class TestimonialViewController: UIViewController {
     
     let cellID = "CellID"
+    var testimonials: [Testimonial]!
     
     let testimonialCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -137,10 +138,10 @@ extension TestimonialViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! TestimonialCell
         let testimonial = testimonials[indexPath.row]
-        cell.testimonialText.text = testimonial["text"]
-        cell.personFullName.text = testimonial["name"]
-        cell.personJobDescription.text = testimonial["job"]
-        cell.avatarImageView.image = UIImage(named: testimonial["avatar"]!)
+        cell.testimonialText.text = testimonial.text
+        cell.personFullName.text = testimonial.personFullName
+        cell.personJobDescription.text = testimonial.personJobDescription
+        cell.avatarImageView.image = UIImage(named: testimonial.avatar)
         return cell
     }
     

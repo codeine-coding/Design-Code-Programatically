@@ -36,6 +36,11 @@
 		9F98B33C211017E900FD9AD7 /* BookmarksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B33B211017E900FD9AD7 /* BookmarksTableViewController.swift */; };
 		9F98B33E2110181300FD9AD7 /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B33D2110181300FD9AD7 /* ExercisesTableViewController.swift */; };
 		9F98B3402110182E00FD9AD7 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B33F2110182E00FD9AD7 /* MoreViewController.swift */; };
+		9FB861692154B89B00D69806 /* Section.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FB861682154B89A00D69806 /* Section.json */; };
+		9FB8616B2154BAA400D69806 /* ContentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8616A2154BAA400D69806 /* ContentApi.swift */; };
+		9FB8616D2154C31600D69806 /* Bookmarks.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FB8616C2154C31600D69806 /* Bookmarks.json */; };
+		9FB861702154CAEF00D69806 /* Testimonials.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FB8616F2154CAEF00D69806 /* Testimonials.json */; };
+		9FB861722154CCFA00D69806 /* Benefits.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FB861712154CCFA00D69806 /* Benefits.json */; };
 		9FC6C33D2142180900E43026 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC6C33C2142180900E43026 /* LoginViewController.swift */; };
 		9FCA90EA2131A0C300DC2704 /* More+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA90E92131A0C300DC2704 /* More+Constraints.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +78,11 @@
 		9F98B33B211017E900FD9AD7 /* BookmarksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksTableViewController.swift; sourceTree = "<group>"; };
 		9F98B33D2110181300FD9AD7 /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
 		9F98B33F2110182E00FD9AD7 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		9FB861682154B89A00D69806 /* Section.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Section.json; sourceTree = "<group>"; };
+		9FB8616A2154BAA400D69806 /* ContentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentApi.swift; sourceTree = "<group>"; };
+		9FB8616C2154C31600D69806 /* Bookmarks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Bookmarks.json; sourceTree = "<group>"; };
+		9FB8616F2154CAEF00D69806 /* Testimonials.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Testimonials.json; sourceTree = "<group>"; };
+		9FB861712154CCFA00D69806 /* Benefits.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Benefits.json; sourceTree = "<group>"; };
 		9FC6C33C2142180900E43026 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9FCA90E92131A0C300DC2704 /* More+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "More+Constraints.swift"; sourceTree = "<group>"; };
 		F12ABFA1CC737BDC34C75935 /* Pods-DesignCodeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignCodeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DesignCodeApp/Pods-DesignCodeApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +121,7 @@
 		9698CD1D1FBB5DE000501C47 /* DesignCodeApp */ = {
 			isa = PBXGroup;
 			children = (
+				9FB8616E2154CA3B00D69806 /* Services */,
 				9F8E17F02151C8540056B834 /* Extensions */,
 				9F1294C3211A8B9000527F93 /* Transitions */,
 				9F98B333210FC71E00FD9AD7 /* Models */,
@@ -172,6 +183,10 @@
 			isa = PBXGroup;
 			children = (
 				9F1F8687210EE43E00BDC274 /* Data.swift */,
+				9FB861682154B89A00D69806 /* Section.json */,
+				9FB8616C2154C31600D69806 /* Bookmarks.json */,
+				9FB8616F2154CAEF00D69806 /* Testimonials.json */,
+				9FB861712154CCFA00D69806 /* Benefits.json */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +215,14 @@
 				9F98B33F2110182E00FD9AD7 /* MoreViewController.swift */,
 			);
 			path = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		9FB8616E2154CA3B00D69806 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9FB8616A2154BAA400D69806 /* ContentApi.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A0F1202EB2AD48FA2A986954 /* Frameworks */ = {
@@ -282,7 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9698CD2C1FBB5DE000501C47 /* LaunchScreen.storyboard in Resources */,
+				9FB861702154CAEF00D69806 /* Testimonials.json in Resources */,
 				9698CD291FBB5DE000501C47 /* Assets.xcassets in Resources */,
+				9FB861692154B89B00D69806 /* Section.json in Resources */,
+				9FB8616D2154C31600D69806 /* Bookmarks.json in Resources */,
+				9FB861722154CCFA00D69806 /* Benefits.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +374,7 @@
 				9F8E17F22151C8720056B834 /* UILabel+Animate.swift in Sources */,
 				9698CD1F1FBB5DE000501C47 /* AppDelegate.swift in Sources */,
 				9F8E17E9214F10F20056B834 /* ExerciseCell.swift in Sources */,
+				9FB8616B2154BAA400D69806 /* ContentApi.swift in Sources */,
 				9FC6C33D2142180900E43026 /* LoginViewController.swift in Sources */,
 				9F8023FA214C9C0700747CA7 /* BenefitsViewController.swift in Sources */,
 				9F1F8684210ED32D00BDC274 /* SectionViewController.swift in Sources */,

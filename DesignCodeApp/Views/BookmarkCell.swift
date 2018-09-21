@@ -107,9 +107,5 @@ class BookmarkCell: UITableViewCell {
         ])
         
     }
-    
-    func configure(bookmark: BookmarkMO) {
-        
-    }
 
 }
