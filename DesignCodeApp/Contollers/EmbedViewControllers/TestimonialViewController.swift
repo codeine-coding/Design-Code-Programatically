@@ -11,7 +11,7 @@ import UIKit
 class TestimonialViewController: UIViewController {
     
     let cellID = "CellID"
-    var testimonials: [Testimonial]!
+    var testimonials: [Testimonial] = ContentApi.shared.testimonials
     
     let testimonialCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

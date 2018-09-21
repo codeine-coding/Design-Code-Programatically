@@ -11,7 +11,7 @@ import UIKit
 class BenefitsViewController: UIViewController {
     
     let cellID = "cellID"
-    var benefits: [Benefit]!
+    var benefits: [Benefit] = ContentApi.shared.benefits
     
     var collectionViewHeight: NSLayoutConstraint!
     

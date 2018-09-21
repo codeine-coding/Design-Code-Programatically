@@ -11,6 +11,5 @@ target 'DesignCodeApp' do
   pod 'ViewAnimator', '1.0.1'
   pod 'TPKeyboardAvoiding'
   pod 'MKRingProgressView'
-  pod 'RealmSwift'
   
 end
