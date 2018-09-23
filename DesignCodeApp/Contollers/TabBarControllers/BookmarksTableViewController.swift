@@ -76,6 +76,17 @@ class BookmarksTableViewController: UITableViewController {
         present(destinationController, animated: true, completion: nil)
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            let bookmark = bookmarks[indexPath.row]
+            CoreDataManager.shared.remove(bookmark)
+            
+            tableView.deleteRows(at: [indexPath], with: .top)
+            tableView.endUpdates()
+        }
+    }
+    
 }
 
 extension BookmarksTableViewController: UISearchBarDelegate {

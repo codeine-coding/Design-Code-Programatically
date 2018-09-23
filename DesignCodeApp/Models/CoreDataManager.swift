@@ -92,7 +92,12 @@ class CoreDataManager {
     lazy var bookmarks: [Bookmark] = fetch(entityName: "Bookmark", ofType: Bookmark.self)
     lazy var sections: [Section] = fetch(entityName: "Section", ofType: Section.self)
     
-    
+    func remove(_ bookmark: Bookmark) {
+        
+        context.delete(bookmark)
+        saveContext()
+        bookmarks = fetch(entityName: "Bookmark", ofType: Bookmark.self)
+    }
     
     // MARK: - Core Data stack
     
