@@ -21,13 +21,12 @@
         "id": "4",
         "type": "text",
         "title": "Setting Up the Basics",
-        "content": "We need a Status Bar for the top of the screen. You can find the Status Bar in the Insert menu at the Toolbar. If you've installed Sketch Runner, you can search it easily. Go to Plugins > Runner > Run… or press Command + ' (apostrophe) to activate Sketch Runner. Select the Insert tab and type keyword \"status bar black\" and double-click the Symbol and then, place it in the Artboard.",
+        "content": "We need a Status Bar for the top of the screen. You can find the Status Bar in the Insert menu at the Toolbar. If you've installed Sketch Runner, you can search it easily. Go to Plugins > Runner > Run… or press Command + ' (apostrophe) to activate Sketch Runner. Select the Insert tab and type keyword \"status bar black\" and double-click the Symbol and then, place it in the Artboard",
     },
     {
         "id": "5",
         "type": "image",
-        "title": "Design+Code Home Screen,
+        "title": "Design+Code Home Screen",
         "content": "We will be designing the new Design+Code Home screen in this tutorial. It contains a hero image, headline, introduction, call-to-action button, chapter and people section.",
     },
-    
 ]
