@@ -11,6 +11,7 @@ import UIKit
 class SectionViewController: UIViewController {
     
     var section: Section!
+    var sections: [Section]!
     var indexPath: IndexPath!
     
     lazy var scrollView: UIScrollView = {
@@ -134,7 +135,7 @@ class SectionViewController: UIViewController {
         titleLabel.text = section.title
         captionLabel.text = section.caption
         descriptionLabel.text = section.body
-        coverImage.image = UIImage(named: section.imageName)
+        coverImage.image = UIImage(named: section.imageName!)
         progressLabel.text = "\(indexPath.row+1) / \(ContentApi.shared.sections.count)"
         let scrollviewBottomConstraint = scrollContentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0.0)
         scrollviewBottomConstraint.priority = UILayoutPriority(rawValue: 999)

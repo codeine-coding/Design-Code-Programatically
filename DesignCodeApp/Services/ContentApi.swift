@@ -11,70 +11,41 @@ import Foundation
 class ContentApi {
     static var shared: ContentApi = ContentApi()
     
-    lazy var sections: [Section] = {
+    func load<T: Codable>(into swiftType: T.Type, resource: String, ofType type: String = "json") -> T? {
+        let path = Bundle.main.path(forResource: resource, ofType: type)
+        let url = URL(fileURLWithPath: path!)
         
-        guard let path = Bundle.main.path(forResource: "Section", ofType: "json") else { return [] }
-        let url = URL(fileURLWithPath: path)
-        
-        guard let data = try? Data(contentsOf: url) else { return [] }
+        guard let data = try? Data(contentsOf: url) else { return nil }
         
         do {
             let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
             decoder.dateDecodingStrategy = .secondsSince1970
-            let sections = try decoder.decode([Section].self, from: data)
-            return sections
+            return try decoder.decode(swiftType.self, from: data)
         } catch {
             print(error)
         }
-       return []
+        return [] as? T
+    }
+    
+    lazy var sections: [SectionCodable] = {
+        return load(into: [SectionCodable].self, resource: "Section") ?? []
     }()
     
     
-    lazy var bookmarks: [Bookmark] = {
-        guard let path = Bundle.main.path(forResource: "Bookmarks", ofType: "json") else { return [] }
-        let url = URL(fileURLWithPath: path)
-        
-        guard let data = try? Data(contentsOf: url) else { return [] }
-        
-        do {
-            let decoder = JSONDecoder()
-            let bookmarks = try decoder.decode([Bookmark].self, from: data)
-            return bookmarks
-        } catch {
-            print(error)
-        }
-        return []
+    lazy var bookmarks: [BookmarkCodable] = {
+       return load(into: [BookmarkCodable].self, resource: "Bookmarks") ?? []
+    }()
+    
+    lazy var parts: [PartCodable] = {
+        return load(into: [PartCodable].self, resource: "Parts") ?? []
     }()
     
     lazy var testimonials: [Testimonial] = {
-        guard let path = Bundle.main.path(forResource: "Testimonials", ofType: "json") else { return [] }
-        let url = URL(fileURLWithPath: path)
-        
-        guard let data = try? Data(contentsOf: url) else { return [] }
-        
-        do {
-            let decoder = JSONDecoder()
-            let testimonials = try decoder.decode([Testimonial].self, from: data)
-            return testimonials
-        } catch {
-            print(error)
-        }
-        return []
+        return load(into: [Testimonial].self, resource: "Testimonials") ?? []
     }()
     
     lazy var benefits: [Benefit] = {
-        guard let path = Bundle.main.path(forResource: "Benefits", ofType: "json") else { return [] }
-        let url = URL(fileURLWithPath: path)
-        
-        guard let data = try? Data(contentsOf: url) else { return [] }
-        
-        do {
-            let decoder = JSONDecoder()
-            let benefits = try decoder.decode([Benefit].self, from: data)
-            return benefits
-        } catch {
-            print(error)
-        }
-        return []
+        return load(into: [Benefit].self, resource: "Benefits") ?? []
     }()
 }

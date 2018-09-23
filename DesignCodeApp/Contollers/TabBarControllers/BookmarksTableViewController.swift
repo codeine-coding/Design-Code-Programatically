@@ -11,8 +11,8 @@ import UIKit
 class BookmarksTableViewController: UITableViewController {
     
     let cellID = "CellID"
-    var bookmarks : [Bookmark] = ContentApi.shared.bookmarks
-    var sections: [Section] = ContentApi.shared.sections
+    var bookmarks : [Bookmark] { return CoreDataManager.shared.bookmarks }
+    var sections: [Section] { return CoreDataManager.shared.sections }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,11 +55,13 @@ class BookmarksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! BookmarkCell
         let bookmark = bookmarks[indexPath.row]
-        cell.sectionName.text = bookmark.sectionTitle
-        cell.partName.text = bookmark.partHeading
-        cell.chapterNumber.text = bookmark.chapterNumber
-        cell.contentLabel.text = bookmark.content
-        cell.chapterBadge.image = UIImage(named: "Bookmarks-" + (bookmark.type?.rawValue.capitalized ?? "Text"))
+        let part = bookmark.part
+        let section = bookmark.section
+        cell.sectionName.text = section?.title?.uppercased()
+        cell.partName.text = part?.title
+        cell.chapterNumber.text = section?.chapterNumber
+        cell.contentLabel.text = part?.content
+        cell.chapterBadge.image = UIImage(named: "Bookmarks-" + (part?.type?.capitalized ?? "Text"))
         return cell
     }
     

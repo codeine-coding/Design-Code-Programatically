@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     
     let presentSectionViewController = PresentSectionViewController()
     
-    var sections: [Section] = ContentApi.shared.sections
+    var sections: [Section] { return CoreDataManager.shared.sections }
     
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView(frame: UIScreen.main.bounds)
@@ -558,7 +558,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let section = sections[indexPath.row]
         cell.cardTitle.text = section.title
         cell.cardDescription.text = section.caption
-        cell.cardBackgroundImageView.image = UIImage(named: section.imageName)
+        cell.cardBackgroundImageView.image = UIImage(named: section.imageName!)
         cell.layer.transform = animateCell(cellFrame: cell.frame)
         return cell
     }
@@ -577,7 +577,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let destinationController = SectionViewController()
-        destinationController.section = sections[indexPath.row]
+        let section = sections[indexPath.row]
+        destinationController.section = section
+        destinationController.sections = sections
         destinationController.indexPath = indexPath
         destinationController.transitioningDelegate = self
         let attributes = chapter1collectionView.layoutAttributesForItem(at: indexPath)!

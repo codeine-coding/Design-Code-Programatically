@@ -10,7 +10,7 @@ import UIKit
 
 class ChaptersViewController: UIViewController {
     
-    var sections: [Section] = ContentApi.shared.sections
+    var sections: [Section] { return CoreDataManager.shared.sections }
 
     override func viewDidLoad() {
         super.viewDidLoad()
