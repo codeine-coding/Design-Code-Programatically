@@ -72,6 +72,7 @@ class CoreDataManager {
                     }
                 }
             }
+            UserDefaults.standard.set(true, forKey: "CoreDataLoaded")
         }
         
         saveContext()

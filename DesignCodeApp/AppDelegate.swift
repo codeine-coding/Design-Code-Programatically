@@ -21,7 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = MainTabBarController()
         window?.makeKeyAndVisible()
         
-        CoreDataManager.shared.loadFromData()
+        if !UserDefaults.standard.bool(forKey: "CoreDataLoaded") {
+            CoreDataManager.shared.loadFromData()
+        }
         return true
     }
 
