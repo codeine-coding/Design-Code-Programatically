@@ -11,7 +11,7 @@ import UIKit
 class BookmarksTableViewController: UITableViewController {
     
     let cellID = "CellID"
-    var bookmarks : [Bookmark] { return CoreDataManager.shared.bookmarks }
+    var bookmarks : [Bookmark] = { return CoreDataManager.shared.bookmarks }()
     var sections: [Section] { return CoreDataManager.shared.sections }
     
     override func viewDidLoad() {
@@ -24,14 +24,25 @@ class BookmarksTableViewController: UITableViewController {
         view.backgroundColor = .white
         navigationItem.title = "Bookmarks"
         navigationController?.navigationBar.prefersLargeTitles = true
-        let searchBar:UISearchBar = UISearchBar()
-        searchBar.searchBarStyle = UISearchBar.Style.minimal
-        searchBar.placeholder = " Search for titles, terms, and content"
-        searchBar.sizeToFit()
-        searchBar.isTranslucent = false
-        searchBar.backgroundImage = UIImage()
-        searchBar.delegate = self
-        navigationItem.titleView = searchBar
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        
+        searchController.searchBar.placeholder = "Search for titles, terms, and content"
+        searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        searchController.searchBar.sizeToFit()
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = true
+//        let searchBar:UISearchBar = UISearchBar()
+//        searchBar.searchBarStyle = UISearchBar.Style.minimal
+//        searchBar.placeholder = " Search for titles, terms, and content"
+//        searchBar.sizeToFit()
+//        searchBar.isTranslucent = false
+//        searchBar.backgroundImage = UIImage()
+//        searchBar.delegate = self
+//        navigationItem.titleView = searchBar
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 70, bottom: 0, right: 16)
     }
     
@@ -89,9 +100,38 @@ class BookmarksTableViewController: UITableViewController {
     
 }
 
+extension BookmarksTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        return
+    }
+    
+    
+}
+
 extension BookmarksTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Inform tabel view to reload and filter
+        let searchText = searchText.lowercased()
+        
+        if searchText.count == 0 {
+            bookmarks = CoreDataManager.shared.bookmarks
+        } else {
+            bookmarks = bookmarks.filter {
+                if $0.section?.title?.lowercased().range(of: searchText) != nil { return true }
+                if $0.part?.title?.lowercased().range(of: searchText) != nil { return true }
+                if $0.part?.content?.lowercased().range(of: searchText) != nil { return true }
+                return false
+            }
+        }
         tableView.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(false)
